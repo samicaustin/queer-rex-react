@@ -104,7 +104,7 @@ class RecIndex extends Component {
     handleSubmit = async (formData) => {
         // Nice to have: prompt user to fill out all inputs if they haven't
         console.log(formData, 'formData');
-        const newRec = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}Rec`, {
+        const newRec = await fetch(`http://localhost:8080/recs`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -120,7 +120,6 @@ class RecIndex extends Component {
         } else {
             console.log('Status of request is not 200!')
         }
-        console.log(this.state.Rec);
     }
 
 
@@ -238,7 +237,7 @@ class RecIndex extends Component {
                         
                         <p className="about-text"> Despite there being more LGTBQIA+ content out than ever before, it can 
                             still be challenging to find "the good stuff." 
-                            Queer Rex is a curated collection of the best queer Rec available today,
+                            Queer Rex is a curated collection of the best queer media available today,
                             recommended by people whose lives have been impacted by how they see 
                             themselves represented in shows, books, and music they love. </p>
 

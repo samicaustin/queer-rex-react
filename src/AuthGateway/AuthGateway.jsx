@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import Register from './Register/Register';
 import Login from './Login/Login';
 
-class AuthGateway {
+class AuthGateway extends Component {
     constructor(props){
         super(props);
         this.state = {
             login: true
         }
     }
+
     toggleLogin = (e) => {
         e.preventDefault();
         console.log("login toggled to " + this.state.login);
@@ -17,7 +18,7 @@ class AuthGateway {
     render(){
         return (
             <div>
-                
+
                 { 
                     this.state.login ?
                         <Login 
@@ -35,3 +36,5 @@ class AuthGateway {
         )
     }
 }
+
+export default AuthGateway;
