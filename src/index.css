@@ -1,13 +1,278 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+* {
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+/* Main Container */
+.container {
+  background-color: black
 }
+
+header {
+  font-family: 'Fascinate Inline', cursive;
+  font-size: 8vw;
+  letter-spacing: 5px;
+  margin: 0 auto 0 auto;
+}
+
+
+
+/* New Form Modal */
+/* .modal-content{
+  width: 80% 
+} */
+
+.modal-title {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px
+}
+
+.modal-header {
+  background-color: goldenrod
+}
+
+.modal-body {
+  height: 100%
+}
+
+.modal-footer {
+  background-color: goldenrod
+}
+
+
+
+
+/* New Form */
+#newForm {
+  margin: auto
+}
+
+label {
+  font-size: 15px;
+  margin: 10px
+}
+
+input {
+  padding: 5px;
+  width: 60%;
+  border: black 2px solid
+}
+
+textarea {
+  padding: 5px;
+  width: 60%;
+  border: black 2px solid
+}
+
+
+
+
+/* rec Scroll */
+.rec-container {
+  margin: auto auto 50px auto;
+  height: 400px;
+  width: 70%;
+  overflow-x: hidden;
+  overflow-y: scroll
+}
+
+.rec-item {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px
+}
+
+.rec-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+img {
+  object-fit: cover;
+}
+
+.rec-img {
+  width: 100%;
+  opacity: .4;
+  height: 300px;
+  transition: opacity 1s;
+  
+}
+
+.rec-img:hover {
+  opacity: .9
+}
+
+.gradient {
+  width: 80%;
+  background: black;
+  margin: auto
+}
+
+.rec-title {
+  color: white;
+  letter-spacing: 2px;
+  font-size: 2vw;
+  font-weight: bold
+}
+
+.rec-description {
+  color: white;
+  font-size: 1.5vw
+}
+
+/* ID MODAL */
+.plus {
+  color: white;
+  font-weight: bold;
+  font-size: 40px
+}
+
+.plus:hover {
+  font-size: 45px
+}
+
+.id-container {
+  margin: 10px
+}
+
+.id-modal-img {
+  width: 100%
+}
+
+.id-modal-title {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px
+}
+
+.id-modal-creator {
+  font-size: 3vw;
+  margin-top: 10px 
+}
+
+.id-modal-description {
+  font-size: 2vw
+}
+
+.idFind {
+  border: white 2px solid;
+  background: none;
+  color: white;
+  width: 200px;
+  padding: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+  border-radius: 10px 
+}
+
+.idFind:hover {
+  opacity: .7
+}
+
+.close {
+  color: white
+}
+
+/* ABOUT SECTION */
+.about-container {
+  width: 100%;
+  height: 700px;
+  background: goldenrod
+}
+
+.about-column {
+  width: 70%;
+  padding-top: 30px;
+  margin: auto;
+}
+
+.about-header {
+  font-family: 'Fascinate Inline', cursive;
+  color: white;
+  font-size: 50px;
+  letter-spacing: 3px
+}
+
+.about-text {
+  color: white
+}
+
+.line {
+  border: white 1px solid;
+  margin: 30px
+}
+
+/* BUTTONS! */
+.button-container {
+  width: 60%;
+  margin: auto auto 20px auto
+}
+
+button {
+  border: none;
+ 
+}
+
+button.type:focus {
+  outline: 0
+}
+
+button.rec:focus {
+  outline: 0
+}
+
+button.type {
+  background-color:none;
+  color: goldenrod;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  width: 100px;
+  padding: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+  text-transform: uppercase;
+  border-radius: 10px 
+}
+
+button.type:hover {
+  background-color: gold;
+  color: white
+}
+
+button.type:focus {
+  background-color: gold;
+  color: white
+}
+
+button.rec {
+  background-color:goldenrod;
+  color: white;
+  border: white 2px solid;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+  text-transform: uppercase;
+  border-radius: 10px 
+}
+
+button.rec:hover {
+  opacity: .7
+}
+
+
+
