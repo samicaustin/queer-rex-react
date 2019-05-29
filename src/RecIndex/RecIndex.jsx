@@ -115,7 +115,7 @@ class RecIndex extends Component {
         const parsedResponse = await newRec.json();
         if (newRec.status === 200){
             this.setState({
-                Rec: [...this.state.allRec, parsedResponse]
+                allRec: [...this.state.allRec, parsedResponse]
             })
         } else {
             console.log('Status of request is not 200!')

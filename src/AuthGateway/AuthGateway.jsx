@@ -12,6 +12,9 @@ class AuthGateway extends Component {
 
     toggleLogin = (e) => {
         e.preventDefault();
+        this.setState({
+            login: !this.state.login
+        })
         console.log("login toggled to " + this.state.login);
     }
 
@@ -31,6 +34,8 @@ class AuthGateway extends Component {
                             toggleLogin={this.toggleLogin}>
                         </Register>
                 }
+
+                
 
             </div>
         )

@@ -27,8 +27,10 @@ class Register extends Component {
                 <form onSubmit = {this.handleSubmit}>
                     Username: <input type="text" name="username" onChange = {this.handleChange}></input>
                     Password: <input type="password" name="password" onChange = {this.handleChange}></input>
-                    <input type="submit" value="Login"></input>
+                    <input type="submit" value="Register"></input>
                 </form>
+
+                <button onClick = {this.props.toggleLogin}>Login Instead!</button>
             </div>
         )
     }

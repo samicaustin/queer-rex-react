@@ -29,6 +29,8 @@ class Login extends Component {
                     Password: <input type="password" name="password" onChange = {this.handleChange}></input><br></br>
                     <input type="submit" value="Login"></input>
                 </form>
+
+                <button onClick = {this.props.toggleLogin}>Register Instead!</button>
             </div>
         )
     }

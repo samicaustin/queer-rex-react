@@ -58,9 +58,15 @@ class App extends Component {
       <div className="App">
         <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Open+Sans" rel="stylesheet"></link>
         <header> QUEER REX</header>
-        <AuthGateway handleRegister={this.handleRegister} 
+        
+        {
+          this.state.loggedIn ?
+          <RecIndex/>
+          :
+          <AuthGateway handleRegister={this.handleRegister} 
           handleLogin={this.handleLogin}></AuthGateway>
-        <RecIndex/>
+        }
+        
       </div>
     );
   }
