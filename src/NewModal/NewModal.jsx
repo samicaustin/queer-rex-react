@@ -15,15 +15,13 @@ class NewModal extends React.Component {
     super(props);
     this.state = {
       modal: false,
-      approved: false,
       title: '',
       type: '',
       creator: '',
       description: '',
       find: '',
-      imageUrl: ''
+      img: ''
     };
-
     this.toggle = this.toggle.bind(this);
   }
 
@@ -44,6 +42,7 @@ class NewModal extends React.Component {
       <div>
 
         <button className = "rec" onClick={this.toggle}>Make a Recommendation</button>
+
         <Modal isOpen={this.state.modal} toggle={this.toggle} >
           <ModalHeader className="new-modal-title" toggle={this.toggle}>New Recommendation</ModalHeader>
           <ModalBody className="new-modal">
@@ -52,12 +51,12 @@ class NewModal extends React.Component {
                     e.preventDefault();
                     e.target.reset();
                     this.setState({
-                        approved: false,
                         title: '',
                         type: '',
                         creator: '',
                         description: '',
-                        imageUrl: ''
+                        find: '',
+                        img: ''
                     })
                     this.props.handleSubmit(this.state);
                     this.toggle();
@@ -99,7 +98,7 @@ class NewModal extends React.Component {
 
                     <FormGroup>
                     <Label>Image URL</Label>
-                    <Input type="text" name="imageUrl" onChange = {this.handleChange}/>
+                    <Input type="text" name="img" onChange = {this.handleChange}/>
                     </FormGroup>
 
                  </Form>

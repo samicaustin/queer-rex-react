@@ -65,7 +65,7 @@ class RecIndex extends Component {
       fetchNews = async () => {
         const url = 'https://newsapi.org/v2/everything?' +
             'q=gay OR queer OR lesbian OR transgender&' +
-            'from=2019-05-28&' +
+            'from=2019-05-29&' +
             'sortBy=relevancy&' +
             'pageSize=10&' +
             'apiKey=64c3c945a2f24a298dfbfb57e9fd47a9';
@@ -106,6 +106,7 @@ class RecIndex extends Component {
         console.log(formData, 'formData');
         const newRec = await fetch(`http://localhost:8080/recs`, {
             method: "POST",
+            credentials: "include",
             headers: {
                 "Content-Type": "application/json"
             },
@@ -155,7 +156,7 @@ class RecIndex extends Component {
 
                             <div>
                                 <div className = "gradient">
-                                    <img className = "rec-img" src={item.imageUrl} alt={item.description}></img>
+                                    <img className = "rec-img" src={item.img} alt={item.description}></img>
                                 </div>
                                 
                                 <div className="rec-text">
@@ -164,8 +165,11 @@ class RecIndex extends Component {
                                     </div>
                                     
                                     <div className="rec-description">
-                                        {item.creator}
+                                        {item.creator} <br></br>
+                                        recommended by {item.user.username}
                                     </div>
+
+                                    
 
                                     <IdModal item = {item}/>
 

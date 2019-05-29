@@ -48,7 +48,6 @@ class App extends Component {
           })
       }
       console.log("APP.JS STATE" + this.state);
-
   }
 
   render(){

@@ -11,8 +11,8 @@ class IdModal extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
 
-  toggle() {
-    this.setState(prevState => ({
+  async toggle() {
+    await this.setState(prevState => ({
       modal: !prevState.modal
     }));
   }
@@ -23,8 +23,6 @@ class IdModal extends React.Component {
     })
     console.log(this.state);
 }
-
-
 
   render() {
     return (
