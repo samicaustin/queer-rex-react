@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   handleRegister = async (formData) => {
-    console.log(formData);
     const response = await fetch("http://localhost:8080/users", {
         method: "POST",
         body: JSON.stringify(formData),
@@ -22,15 +21,14 @@ class App extends Component {
         },
         credentials: "include"
     })
-    console.log(response);
     const parsedResponse = await response.json();
-    console.log(parsedResponse);
     if(response.status === 200){
         this.setState({
             username: parsedResponse.username,
             loggedIn: true
         })
     }
+    console.log("APP.JS STATE" + this.state);
   }
 
   handleLogin = async (formData) => {
@@ -42,15 +40,15 @@ class App extends Component {
           },
           credentials: "include"
       })
-      console.log(response);
       const parsedResponse = await response.json();
-      console.log(parsedResponse);
       if(response.status === 200){
           this.setState({
               username: parsedResponse.username,
               loggedIn: true
           })
       }
+      console.log("APP.JS STATE" + this.state);
+
   }
 
   render(){
@@ -58,7 +56,7 @@ class App extends Component {
       <div className="App">
         <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Open+Sans" rel="stylesheet"></link>
         <header> QUEER REX</header>
-        
+
         {
           this.state.loggedIn ?
           <RecIndex/>
