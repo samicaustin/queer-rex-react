@@ -68,6 +68,33 @@ textarea {
   border: black 2px solid
 }
 
+/* Authentication Forms */
+.authform {
+  margin: 10px
+}
+
+.authinput {
+  margin: 10px;
+  text-align: center
+}
+
+.authbutton {
+  background-color:goldenrod;
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 10px;
+  letter-spacing: 2px;
+  margin: 10px;
+  text-transform: uppercase;
+  border-radius: 10px 
+}
+
+.authbutton:hover {
+ opacity: .7
+}
 
 
 

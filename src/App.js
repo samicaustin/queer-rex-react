@@ -8,7 +8,7 @@ class App extends Component {
     super(props);
     this.state = {
       loggedIn: false,
-      username: null
+      userId: null
     }
   }
 
@@ -24,11 +24,10 @@ class App extends Component {
     const parsedResponse = await response.json();
     if(response.status === 200){
         this.setState({
-            username: parsedResponse.username,
+            userId: parsedResponse.id,
             loggedIn: true
         })
     }
-    console.log("APP.JS STATE" + this.state);
   }
 
   handleLogin = async (formData) => {
@@ -43,11 +42,11 @@ class App extends Component {
       const parsedResponse = await response.json();
       if(response.status === 200){
           this.setState({
-              username: parsedResponse.username,
+              userId: parsedResponse.id,
               loggedIn: true
           })
       }
-      console.log("APP.JS STATE" + this.state);
+      console.log("APP.JS STATE" + this.state.userId);
   }
 
   render(){
@@ -55,10 +54,12 @@ class App extends Component {
       <div className="App">
         <link href="https://fonts.googleapis.com/css?family=Fascinate+Inline|Open+Sans" rel="stylesheet"></link>
         <header> QUEER REX</header>
+        <p>LGTBQIA+ media recommendations; <br></br>
+            for queers by queers.</p> 
 
         {
           this.state.loggedIn ?
-          <RecIndex/>
+          <RecIndex userId = {this.state.userId}/>
           :
           <AuthGateway handleRegister={this.handleRegister} 
           handleLogin={this.handleLogin}></AuthGateway>

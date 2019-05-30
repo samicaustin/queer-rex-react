@@ -24,13 +24,13 @@ class Register extends Component {
     render(){
         return(
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    Username: <input type="text" name="username" onChange = {this.handleChange}></input>
-                    Password: <input type="password" name="password" onChange = {this.handleChange}></input>
-                    <input type="submit" value="Register"></input>
+                <form className = "authform" onSubmit = {this.handleSubmit}>
+                    <input className = "authinput" type="text" name="username" placeholder = "Type username here" onChange = {this.handleChange}></input>
+                    <input className = "authinput" type="password" name="password" placeholder = "Type password here" onChange = {this.handleChange}></input>
+                    <input className = "authbutton" type="submit" value="Register"></input>
                 </form>
 
-                <button onClick = {this.props.toggleLogin}>Login Instead!</button>
+                <button onClick = {this.props.toggleLogin}>Already have an account?</button>
             </div>
         )
     }

@@ -42,7 +42,7 @@ class IdModal extends React.Component {
 
                             <div>
                                 <div >
-                                    <img className = "id-modal-img" src={this.props.item.imageUrl} alt={this.props.item.description}></img>
+                                    <img className = "id-modal-img" src={this.props.item.img} alt={this.props.item.description}></img>
                                 </div>
                                 <div className="id-modal-text">
                                     <div className = "id-modal-creator">
@@ -78,19 +78,23 @@ class IdModal extends React.Component {
 
             </ModalBody>
             <ModalFooter>
+
                 {
-
                     this.props.item.creator ?
-
-                    <form action = 'http://google.com'>
-                    <input className="idFind" type="submit" value="Where to Access"/>
-                    </form>
+                    // this.props.item.user_id == session.user ?
+                    // <button className = "editRec"/> 
+                    // Do I want this button to toggle this modal off and replace it 
+                    // with an edit modal? Or just replace the content with another toggle 
+                    // between the content and an edit form in the same modal? 
+                    null
 
                     :
+
                     <form action= {this.props.item.url}>
                     <input className="idFind" type="submit" value="Full Article"/>
                     </form>
                 }
+
             </ModalFooter>
         </Modal>
 

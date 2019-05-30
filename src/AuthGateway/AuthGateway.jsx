@@ -15,7 +15,6 @@ class AuthGateway extends Component {
         this.setState({
             login: !this.state.login
         })
-        console.log("login toggled to " + this.state.login);
     }
 
     render(){

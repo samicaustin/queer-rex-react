@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NewModal from '../NewModal/NewModal';
-import IdModal from '../IdModal/IdModal'
+import IdModal from '../IdModal/IdModal';
+// import EditRec from '../EditRec/EditRec';
 // import SearchForm from '../SearchForm/SearchForm';
 import '../App.css';
 
@@ -12,6 +13,7 @@ class RecIndex extends Component {
         this.state = {
             allRec: [],
             filteredRec: [],
+            usersRecs: [],
             news: []
         }
     }
@@ -26,9 +28,7 @@ class RecIndex extends Component {
             const response = await fetch(`http://localhost:8080/recs`, {
                 credentials: "include"
             });
-
             const parsedResponse = await response.json();
-            console.log(parsedResponse);
             this.setState({
                 allRec: parsedResponse,
                 filteredRec: parsedResponse
@@ -65,7 +65,7 @@ class RecIndex extends Component {
       fetchNews = async () => {
         const url = 'https://newsapi.org/v2/everything?' +
             'q=gay OR queer OR lesbian OR transgender&' +
-            'from=2019-05-29&' +
+            'from=2019-05-30&' +
             'sortBy=relevancy&' +
             'pageSize=10&' +
             'apiKey=64c3c945a2f24a298dfbfb57e9fd47a9';
@@ -99,11 +99,19 @@ class RecIndex extends Component {
         // return Rec
     }
 
+    handleUserRecs = () => {
+        const usersRecs = this.state.allRec.filter((rec) => {
+            return rec.user && (rec.user.id === this.props.userId)
+        })
+        this.setState({
+            filteredRec: usersRecs
+        })
+    }
+
     // CREATE ROUTE
     // Why does the browser need to be refreshed in order to display newly created Rec?
     handleSubmit = async (formData) => {
         // Nice to have: prompt user to fill out all inputs if they haven't
-        console.log(formData, 'formData');
         const newRec = await fetch(`http://localhost:8080/recs`, {
             method: "POST",
             credentials: "include",
@@ -112,7 +120,6 @@ class RecIndex extends Component {
             },
             body: JSON.stringify(formData)
         });
-        console.log(newRec, 'newRec');
         const parsedResponse = await newRec.json();
         if (newRec.status === 200){
             this.setState({
@@ -209,11 +216,9 @@ class RecIndex extends Component {
         return (
             <div className="App">
 
-            <p>Curated LGTBQIA+ Rec recommendations; <br></br>
-            for queers by queers.</p> 
-
+            
             {/* <NewRecForm handleSubmit = {this.handleSubmit}/> */}
-
+            <button className = "authbutton" name="user" onClick = {this.handleUserRecs}>My Queer Rex</button>
             <div className="button-container">
                 <button className="type" name="News" onClick = {this.handleNewsButton}>News</button>
                 <button className="type" name="book" onClick = {this.handleButton}>Books</button>
@@ -255,7 +260,11 @@ class RecIndex extends Component {
 
 
                         <NewModal handleSubmit = {this.handleSubmit}/>
+
+                        
                         <hr className="line"></hr>
+
+                        
 
                     </div>
                 </div>

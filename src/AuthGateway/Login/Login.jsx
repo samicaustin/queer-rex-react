@@ -24,13 +24,13 @@ class Login extends Component {
     render(){
         return(
             <div>
-                <form onSubmit = {this.handleSubmit}>
-                    Username: <input type="text" name="username" onChange = {this.handleChange}></input><br></br>
-                    Password: <input type="password" name="password" onChange = {this.handleChange}></input><br></br>
-                    <input type="submit" value="Login"></input>
+                <form className = "authform" onSubmit = {this.handleSubmit}>
+                    <input className = "authinput" type="text" name="username" placeholder = "Type username here" onChange = {this.handleChange}></input><br></br>
+                    <input className = "authinput" type="password" name="password" placeholder = "Type password here" onChange = {this.handleChange}></input><br></br>
+                    <input className = "authbutton" type="submit" value="Login"></input>
                 </form>
 
-                <button onClick = {this.props.toggleLogin}>Register Instead!</button>
+                <button onClick = {this.props.toggleLogin}>Don't have an account?</button>
             </div>
         )
     }

@@ -10,7 +10,7 @@ import {
     Input
  } from 'reactstrap';
 
-class NewModal extends React.Component {
+class EditRec extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class NewModal extends React.Component {
     return (
       <div>
 
-        <button className = "rec" onClick={this.toggle}>Make a Recommendation</button>
+        <button className = "rec" onClick={this.toggle}>Edit My Recommendations</button>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle} >
           <ModalHeader className="new-modal-title" toggle={this.toggle}>New Recommendation</ModalHeader>
@@ -71,14 +71,7 @@ class NewModal extends React.Component {
 
                     <FormGroup>
                         <Label>Type ("movie", "show", "album", "book", "comic", or "other")</Label>
-                        <Input type="text" name="type" onChange = {this.handleChange}>
-                            {/* <option>Movie</option>
-                            <option>Show</option>
-                            <option>Book</option>
-                            <option>Comic</option>
-                            <option>Album</option>
-                            <option>Other</option> */}
-                        </Input>
+                        <Input type="text" name="type" onChange = {this.handleChange}></Input>
                     </FormGroup>
 
                     <FormGroup>
@@ -116,4 +109,4 @@ class NewModal extends React.Component {
   }
 }
 
-export default NewModal;
+export default EditRec;
