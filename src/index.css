@@ -302,17 +302,18 @@ button.rec:hover {
 }
 
 .myqueerrex {
-  background-color:none;
+  background-color: none;
   color: goldenrod;
   font-size: 13px;
   font-weight: bold;
   display: inline-block;
-  width: 100px;
+  width: 150px;
   padding: 5px;
   letter-spacing: 2px;
   margin: 10px;
   text-transform: uppercase;
-  border-radius: 10px 
+  border-radius: 10px;
+  border: solid 2px;
 }
 
 .myqueerrex:hover {
