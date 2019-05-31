@@ -25,6 +25,7 @@ class RecIndex extends Component {
 
     getAllRec = async () => {
         try {
+            console.log("getAllRec hit!!!");
             const response = await fetch(`https://queerrex-java.herokuapp.com/recs`, {
                 credentials: "include"
             });
@@ -63,6 +64,7 @@ class RecIndex extends Component {
       // Need to refine gay search and create a variable that subs in today's date into the request URL
       // Also would like to randomize order of state arrays eventually
       fetchNews = async () => {
+        console.log("fetchNews hit!!!");
         const url = 'https://newsapi.org/v2/everything?' +
             'q=gay OR queer OR lesbian OR transgender&' +
             'from=2019-05-30&' +
