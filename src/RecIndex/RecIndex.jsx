@@ -221,7 +221,7 @@ class RecIndex extends Component {
 
             
             {/* <NewRecForm handleSubmit = {this.handleSubmit}/> */}
-            <button className = "authbutton" name="user" onClick = {this.handleUserRecs}>My Queer Rex</button>
+            <button className = "myqueerrex" name="user" onClick = {this.handleUserRecs}>My Queer Rex</button>
             <div className="button-container">
                 <button className="type" name="News" onClick = {this.handleNewsButton}>News</button>
                 <button className="type" name="book" onClick = {this.handleButton}>Books</button>

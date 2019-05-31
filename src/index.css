@@ -301,5 +301,26 @@ button.rec:hover {
   opacity: .7
 }
 
+.myqueerrex {
+  background-color:none;
+  color: goldenrod;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+  width: 100px;
+  padding: 5px;
+  letter-spacing: 2px;
+  margin: 10px;
+  text-transform: uppercase;
+  border-radius: 10px 
+}
 
+.myqueerrex:hover {
+  background-color: gold;
+  color: white
+}
 
+.myqueerrex:focus {
+  background-color: gold;
+  color: white
+}
