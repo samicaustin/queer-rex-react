@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   handleRegister = async (formData) => {
-    const response = await fetch("http://localhost:8080/users", {
+    const response = await fetch("https://queerrex-java.herokuapp.com/users", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   handleLogin = async (formData) => {
-      const response = await fetch("http://localhost:8080/login", {
+      const response = await fetch("https://queerrex-java.herokuapp.com/login", {
           method: "POST",
           body: JSON.stringify(formData),
           headers: {
