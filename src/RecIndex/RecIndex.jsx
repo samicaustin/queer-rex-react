@@ -74,6 +74,7 @@ class RecIndex extends Component {
         const req = new Request(url);
         const todaysNews = await fetch(req);
         const todaysNewsParsed = await todaysNews.json();
+        console.log(todaysNewsParsed + " response from api");
         this.setState({
             allRec: [...this.state.allRec, ...todaysNewsParsed.articles],
             filteredRec: this.shuffle([...this.state.allRec, ...todaysNewsParsed.articles]),
