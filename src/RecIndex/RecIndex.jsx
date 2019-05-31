@@ -18,9 +18,9 @@ class RecIndex extends Component {
         }
     }
 
-    componentDidMount = () => {
-        this.getAllRec();
-        this.fetchNews();
+    componentDidMount = async () => {
+        await this.getAllRec();
+        await this.fetchNews();
     }
 
     getAllRec = async () => {
