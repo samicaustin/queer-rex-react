@@ -25,7 +25,7 @@ class RecIndex extends Component {
 
     getAllRec = async () => {
         try {
-            const response = await fetch(`http://localhost:8080/recs`, {
+            const response = await fetch(`https://queerrex-java.herokuapp.com/recs`, {
                 credentials: "include"
             });
             const parsedResponse = await response.json();
@@ -112,7 +112,7 @@ class RecIndex extends Component {
     // Why does the browser need to be refreshed in order to display newly created Rec?
     handleSubmit = async (formData) => {
         // Nice to have: prompt user to fill out all inputs if they haven't
-        const newRec = await fetch(`http://localhost:8080/recs`, {
+        const newRec = await fetch(`https://queerrex-java.herokuapp.com/recs`, {
             method: "POST",
             credentials: "include",
             headers: {
