@@ -67,7 +67,7 @@ class RecIndex extends Component {
         console.log("fetchNews hit!!!");
         const url = 'https://newsapi.org/v2/everything?' +
             'q=gay OR queer OR lesbian OR transgender&' +
-            'from=2019-05-30&' +
+            'from=2019-07-16&' +
             'sortBy=relevancy&' +
             'pageSize=10&' +
             'apiKey=64c3c945a2f24a298dfbfb57e9fd47a9';
